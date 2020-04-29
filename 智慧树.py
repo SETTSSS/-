@@ -151,6 +151,8 @@ def enter(url):
             play_speed.click()
             driver.find_element_by_xpath('//*[@id="vjs_container"]/div[10]/div[8]/div/div[1]').click()
             print('已经开启赛亚人模式')
+            end_time = driver.find_element_by_xpath('//*[@id="vjs_container"]/div[10]/div[4]/span[2]').text
+            print('结束时间为%s' % end_time)
             break
         play_button = driver.find_element_by_id('playButton')
         while judgement == 'playButton' and current_time != end_time:
